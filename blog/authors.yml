@@ -1,0 +1,23 @@
+ehjc:
+  name: ehjc
+  title: Core
+  url: https://github.com/f3rmion
+  image_url: https://pbs.twimg.com/profile_images/1562388428960006144/bItuzgAV_400x400.jpg
+
+rohmanus:
+  name: Rohmanus
+  title: Core
+  url: https://twitter.com/RohmanusC
+  image_url: https://pbs.twimg.com/profile_images/1455325167228440579/38hdzAOc_400x400.jpg
+
+max:
+  name: Max Entropy
+  title: Core
+  url: https://twitter.com/0xMaxEntropy
+  image_url: https://pbs.twimg.com/profile_images/1138346724282503168/9g8zYema_400x400.png
+
+greenbergz:
+  name: greenbergz
+  title: Core
+  url: https://github.com/justingreenberg
+  image_url: https://github.com/justingreenberg.png
