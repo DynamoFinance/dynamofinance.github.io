@@ -105,8 +105,12 @@ const config = {
             title: "Docs",
             items: [
               {
-                label: "Tutorial",
+                label: "Get started",
                 to: "/docs/intro",
+              },
+              {
+                label: "Vaults",
+                to: "/docs/Dynamo/Vaults/intro",
               },
             ],
           },
