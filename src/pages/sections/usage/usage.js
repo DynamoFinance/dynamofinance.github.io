@@ -28,10 +28,10 @@ function Strategist() {
   return (
     <div className="row margin-horiz--lg">
       <div className="col col--6 padding-vert--lg padding-right--lg">
-        <h1 style={{ textAlign: "left" }}>Strategists earn passively</h1>
+        <h1 style={{ textAlign: "left" }}>Strategists earn revenue</h1>
         <div style={{ textAlign: "justify" }}>
-          Become a strategist and earn 1% of our revenue by proposing optimal
-          weights for our rebalancing vaults that improve their APYs.{" "}
+          Become a strategist and earn 1% of our revenue by proposing a better
+          set of weight that improve our APY.{" "}
         </div>
         <div style={{ textAlign: "right" }}>
           <a href={useBaseUrl("#")}>
@@ -55,11 +55,11 @@ function Vaults() {
       </div>
 
       <div className="col col--6 margin-vert--xl">
-        <h1 style={{ textAlign: "right" }}>Dynamo ERC-4626 vaults</h1>
+        <h1 style={{ textAlign: "right" }}>Our vaults</h1>
         <div style={{ textAlign: "justify" }}>
-          Our vaults rebalance idle liquidity between different whitelisted
-          lending protocols to always bring the best interest rates to our
-          users.{" "}
+          Our ERC-4626 vaults rebalance idle liquidity between different
+          whitelisted lending protocols to always bring the best interest rates
+          to our users.{" "}
         </div>
         <div style={{ textAlign: "right" }}>
           <a href={useBaseUrl("#")}>

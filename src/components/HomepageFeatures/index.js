@@ -13,20 +13,15 @@ const FeatureList = [
     Svg: require("@site/static/img/augmented.svg").default,
     description: (
       <>
-        We obtain best interest rates by allowing strategists to propose new
-        sets of weights that will result in the highest APYs.
+        We improve interest rates by rebalance liquidity across various lending
+        markets.
       </>
     ),
   },
   {
     title: "Liquidity mining",
     Svg: require("@site/static/img/technology.svg").default,
-    description: (
-      <>
-        By providing liquidity you can stake your LP tokens to obtain additional
-        Balancer liquidity rewards.
-      </>
-    ),
+    description: <>Farm Balancer liquidity rewards by stking your LP tokens.</>,
   },
 ];
 

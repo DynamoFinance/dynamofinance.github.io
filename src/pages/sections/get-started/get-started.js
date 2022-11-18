@@ -36,6 +36,28 @@ const Card = ({ title, description, cardImage, url }) => {
   );
 };
 
+const CardSoon = ({ title, description, cardImage, url }) => {
+  return (
+    <div className="col col--4 margin-vert--md">
+      <div className="card">
+        <div className="card__header">
+          <h3>{title}</h3>
+        </div>
+        <div
+          className="card__image padding-top--lg"
+          style={{ height: "120px" }}
+        >
+          <img src={useBaseUrl(cardImage)} style={{ width: "150px" }} />
+        </div>
+        <div className="card__body padding-top--xl" style={{ height: "130px" }}>
+          <p>{description}</p>
+        </div>
+        <div className="card__footer">Soon available</div>
+      </div>
+    </div>
+  );
+};
+
 export default function GetStarted() {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
@@ -45,16 +67,18 @@ export default function GetStarted() {
       title: "Liquidity Gateway",
       description: "Become a liquidity provider.",
       cardImage: "img/door.svg",
-      url: "",
+      url: "https://dynamofinance.github.io/docs/Dynamo/liquidity_management",
     },
     {
-      title: "Open-source mind",
-      description: "Use our open-source software in your projects.",
+      title: "Open-source",
+      description: "We share our ERC-4626 vaults under MIT.",
       cardImage: "img/package.svg",
-      url: "",
+      url: "https://dynamofinance.github.io/docs/Dynamo/Vaults/intro",
     },
+  ];
+  const CardListSoon = [
     {
-      title: "Decentralised finance",
+      title: "Metapools",
       description: "Directly profit from our research.",
       cardImage: "img/science.svg",
       url: "",
@@ -81,6 +105,14 @@ export default function GetStarted() {
         >
           {CardList.map((card) => (
             <Card
+              title={card.title}
+              description={card.description}
+              cardImage={card.cardImage}
+              url={card.url}
+            />
+          ))}
+          {CardListSoon.map((card) => (
+            <CardSoon
               title={card.title}
               description={card.description}
               cardImage={card.cardImage}
