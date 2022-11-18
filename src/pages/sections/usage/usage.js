@@ -34,7 +34,7 @@ function Strategist() {
           set of weight that improve our APY.{" "}
         </div>
         <div style={{ textAlign: "right" }}>
-          <a href={useBaseUrl("#")}>
+          <a href={useBaseUrl("docs/Dynamo/liquidity_management")}>
             {" "}
             <b>Read more</b>
           </a>
@@ -62,7 +62,7 @@ function Vaults() {
           to our users.{" "}
         </div>
         <div style={{ textAlign: "right" }}>
-          <a href={useBaseUrl("#")}>
+          <a href={useBaseUrl("docs/Dynamo/Vaults/governance")}>
             {" "}
             <b>Read more</b>
           </a>
