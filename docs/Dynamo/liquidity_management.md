@@ -15,7 +15,7 @@ Inside the vault, the capital waits for a rebalancing event to be shifted to var
 The composition of the lending platforms is determined by the currently active Strategy.
 
 A Strategy is proposed by a Strategist that will earn 1% of the generated revenue (while their Strategy is active) as reward for the successfully proposed Strategy.
-Please review the [Governance](./governance) section to get familiar with the vault infrastructure.
+Please review the [Governance](./Vaults/governance) section to get familiar with the vault infrastructure.
 
 Users can also directly enter the Dynamo vaults to obtain a receipt token (DAI $\rightarrow$ dDAI).
 However, we plan to participate in additional liquidity farming through LP token staking, which would only be possible by providing liquidity to the liquidity pools.
