@@ -6,7 +6,7 @@
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dynamofinance.github.io/blog"/>
     <subtitle>Dynamo Docs Blog</subtitle>
-    <icon>https://dynamofinance.github.io/img/favicon.ico</icon>
+    <icon>https://dynamofinance.github.io/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Development grant]]></title>
         <id>balancer-grant</id>
