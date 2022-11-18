@@ -67,13 +67,13 @@ export default function GetStarted() {
       title: "Liquidity Gateway",
       description: "Become a liquidity provider.",
       cardImage: "img/door.svg",
-      url: "https://dynamofinance.github.io/docs/Dynamo/liquidity_management",
+      url: "docs/Dynamo/liquidity_management",
     },
     {
       title: "Open-source",
       description: "We share our ERC-4626 vaults under MIT.",
       cardImage: "img/package.svg",
-      url: "https://dynamofinance.github.io/docs/Dynamo/Vaults/intro",
+      url: "docs/Dynamo/Vaults/intro",
     },
   ];
   const CardListSoon = [
