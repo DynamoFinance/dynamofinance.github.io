@@ -10,8 +10,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Dynamo Documentation",
-  tagline: "Yield optimisation for connected markets",
+  title: "Dynamo Docs",
+  tagline: "We improve interest rates.",
   url: "https://dynamofinance.github.io",
   baseUrl: "/",
   onBrokenLinks: "warn",
