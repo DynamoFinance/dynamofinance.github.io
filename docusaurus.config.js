@@ -11,7 +11,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Dynamo Docs",
-  tagline: "We improve interest rates.",
+  tagline: "We improve interest rates and yields.",
   url: "https://dynamofinance.github.io",
   baseUrl: "/",
   onBrokenLinks: "warn",
