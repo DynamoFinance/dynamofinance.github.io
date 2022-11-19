@@ -5,12 +5,12 @@ import styles from "./styles.module.css";
 const FeatureList = [
   {
     title: "Boosted liquidity pools",
-    Svg: require("@site/static/img/cloud.svg").default,
+    Svg: require("@site/static/img/rocket.svg").default,
     description: <>We improve base APYs by lending out idle liquidity.</>,
   },
   {
     title: "Best interest rates",
-    Svg: require("@site/static/img/augmented.svg").default,
+    Svg: require("@site/static/img/interest.svg").default,
     description: (
       <>
         We improve interest rates by rebalance liquidity across various lending
@@ -20,7 +20,7 @@ const FeatureList = [
   },
   {
     title: "Liquidity mining",
-    Svg: require("@site/static/img/technology.svg").default,
+    Svg: require("@site/static/img/chart.svg").default,
     description: <>Farm Balancer liquidity rewards by stking your LP tokens.</>,
   },
 ];

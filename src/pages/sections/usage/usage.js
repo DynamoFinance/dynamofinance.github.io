@@ -41,7 +41,7 @@ function Strategist() {
         </div>
       </div>
       <div className="col col--6 margin-bottom--sm">
-        <img width="70%" src={useBaseUrl("img/data.svg")} />
+        <img width="70%" src={useBaseUrl("img/strategist.svg")} />
       </div>
     </div>
   );
@@ -51,7 +51,7 @@ function Vaults() {
   return (
     <div className={clsx(styles.reverse, "row", "margin-horiz--lg")}>
       <div className="col col--6 margin-vert--sm">
-        <img width="45%" src={useBaseUrl("img/predict.svg")} />
+        <img width="80%" src={useBaseUrl("img/vault.svg")} />
       </div>
 
       <div className="col col--6 margin-vert--xl">

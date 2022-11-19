@@ -17,7 +17,7 @@ const Card = ({ title, description, cardImage, url }) => {
           className="card__image padding-top--lg"
           style={{ height: "120px" }}
         >
-          <img src={useBaseUrl(cardImage)} style={{ width: "150px" }} />
+          <img src={useBaseUrl(cardImage)} style={{ width: "140px" }} />
         </div>
         <div className="card__body padding-top--xl" style={{ height: "130px" }}>
           <p>{description}</p>
@@ -64,15 +64,15 @@ export default function GetStarted() {
 
   const CardList = [
     {
-      title: "Liquidity Gateway",
+      title: "Dynamo users",
       description: "Become a liquidity provider.",
-      cardImage: "img/door.svg",
+      cardImage: "img/liquidity_provider.svg",
       url: "docs/Dynamo/liquidity_management",
     },
     {
       title: "Open-source",
       description: "We share our ERC-4626 vaults under MIT.",
-      cardImage: "img/package.svg",
+      cardImage: "img/software.svg",
       url: "docs/Dynamo/Vaults/intro",
     },
   ];
