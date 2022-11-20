@@ -25,7 +25,7 @@ export default function TeamProfileCard({
               className="avatar__photo avatar__photo--xl"
               src={
                 imageUrl
-                  ? useBaseUrl("img/team/" + imageUrl)
+                  ? useBaseUrl(imageUrl)
                   : "https://eu.ui-avatars.com/api/?size=128&background=830051&color=ffffff&name=" +
                     name
               }

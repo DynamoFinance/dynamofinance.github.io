@@ -52,7 +52,7 @@ const CardSoon = ({ title, description, cardImage, url }) => {
         <div className="card__body padding-top--xl" style={{ height: "130px" }}>
           <p>{description}</p>
         </div>
-        <div className="card__footer">Soon available</div>
+        <div className="card__footer"></div>
       </div>
     </div>
   );
@@ -64,22 +64,22 @@ export default function GetStarted() {
 
   const CardList = [
     {
-      title: "Dynamo users",
+      title: "Dynamo:s",
       description: "Become a liquidity provider.",
       cardImage: "img/liquidity_provider.svg",
       url: "docs/Dynamo/liquidity_management",
     },
     {
       title: "Open-source",
-      description: "We share our ERC-4626 vaults under MIT.",
+      description: "We share our code under MIT.",
       cardImage: "img/software.svg",
       url: "docs/Dynamo/Vaults/intro",
     },
   ];
   const CardListSoon = [
     {
-      title: "Metapools",
-      description: "Directly profit from our research.",
+      title: "Innovation",
+      description: "Profit from our research.",
       cardImage: "img/science.svg",
       url: "",
     },

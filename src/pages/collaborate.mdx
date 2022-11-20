@@ -1,0 +1,28 @@
+---
+sidebar_position: 1
+---
+
+# Collaborate
+
+import TeamProfileCard from "@site/src/components/TeamProfileCard";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+export function TeamProfileCardCol(props) {
+  return (
+    <TeamProfileCard {...props} className={"col col--4 margin-bottom--lg"} />
+  );
+}
+
+Are you curious about Dynamo and want to collaborate with us? <br />
+That's great! Get in touch with us: <br /><br />
+
+<div className="row">
+
+<TeamProfileCardCol
+  name="Contact Us"
+  dept="DynamoFinance"
+  imageUrl={useBaseUrl("img/planet.svg")}
+  email="dynamoprotocol@proton.me"
+></TeamProfileCardCol>
+
+</div>

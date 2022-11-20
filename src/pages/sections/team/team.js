@@ -20,14 +20,14 @@ export default function Team() {
             <div className="padding--sm">
               <a
                 className="button button--secondary button--block margin-vert--xs"
-                href="#"
+                href={useBaseUrl("/collaborate")}
               >
                 Collaborate
               </a>
 
               <a
                 className="button button--secondary button--block margin-vert--xs"
-                href="#"
+                href={useBaseUrl("/team")}
               >
                 Team
               </a>

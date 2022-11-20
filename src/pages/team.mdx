@@ -1,0 +1,67 @@
+---
+sidebar_position: 2
+---
+
+# Team
+
+import TeamProfileCard from "@site/src/components/TeamProfileCard";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+export function TeamProfileCardCol(props) {
+  return (
+    <TeamProfileCard {...props} className={"col col--4 margin-bottom--lg"} />
+  );
+}
+
+<div className="row">
+
+<TeamProfileCardCol
+  name="greenbergz"
+  dept="Engineer"
+  imageUrl="https://github.com/justingreenberg.png"
+  email=""
+>
+  Lead Front-end Engineer
+</TeamProfileCardCol>
+
+<TeamProfileCardCol
+  name="Rohmanus"
+  dept="Research and BizDev"
+  imageUrl="https://pbs.twimg.com/profile_images/1455325167228440579/38hdzAOc_400x400.jpg"
+  email=""
+>
+  Head of BizDev
+</TeamProfileCardCol>
+
+<TeamProfileCardCol
+  name="Max Entropy"
+  dept="Communications and BizDev"
+  imageUrl="https://pbs.twimg.com/profile_images/1138346724282503168/9g8zYema_400x400.png"
+  email=""
+>
+  Head of Communications
+</TeamProfileCardCol>
+
+<TeamProfileCardCol
+  name="ehjc"
+  dept="Research and Engineer"
+  imageUrl="https://pbs.twimg.com/profile_images/1562388428960006144/bItuzgAV_400x400.jpg"
+  email=""
+>
+  Head of R&D
+</TeamProfileCardCol>
+
+<TeamProfileCardCol
+  name="Ben"
+  dept="Engineer"
+  imageUrl="https://avatars.githubusercontent.com/u/878591?v=4"
+  email=""
+>
+  Lead Smart-Contract Engineer
+</TeamProfileCardCol>
+
+</div>
+
+## Bug reports
+
+Found a bug? Please let us know! Just write us email. Thanks!
