@@ -3,20 +3,12 @@ sidebar_position: 1
 title: Introduction
 ---
 
-The standard DeFi user wants to productively invest his assets in various lending platforms to maximise overall yield.
-Most such platforms support lending markets for the largest stablecoins and various other highly liquid assets.
-Unfortunately, the nature of lending protocols makes the returns on lent assets inversely proportional to the availability of capital in the respective lending pools.
-Thus, in the presence of a surplus of available capital, interest rates on lending protocols decrease.
-The existence of multiple DeFi protocols leads to interest rate imbalances that come as a result of different utilisation rates in different lending markets.
-Yearn Finance[^1] was the first protocol to take advantage of such discrepancies by providing automatic capital migration to the protocol with the highest returns at the time.
+Asset lending costitutes a relatively low risk activity for defi users that are interested in putting their portfolio assets to productive use with a multitude of lending venues being available to facilitate decentralised lending activities. Platforms such as Aave, compound, Euler and Fraxlend allow their users to generate yield on their capital while keeping custody of their assets. Decentralised lending has facilitated a large part of defi's growth with the lending pool model becoming the dominant implementation in the space leading to the dominance of utilisation based interest rate models. Thus, in the presence of a surplus of available capital, interest rates on lending protocols decrease. The existence of multiple DeFi protocols leads to interest rate imbalances that come as a result of different utilisation rates in different lending markets.
 
-At Dynamo we aim to tackle low liquidity pool yields by developing a modular liquidity management stack comprised of a yield optimiser built on top of BalanceV2.
-Since most of the locked liquidity within a pool is idle and does not participate in swap events, we want to use that portion to generate additional interest through lending markets.
-The integration of liquidity provision with yield aggregation activities solves the dilemmas that liquidity providers are facing regarding capital allocation by providing them with the option of utilizing a structured liquidity management offering that maintains an optimized market exposure across multiple yield generation venues in the backend while maintaining liquid markets for a whole range of assets.
+Dynamo aims to optimise lending yields by developing a decentralised solution that utilises the underlying capital in a multitude of lending venues in order to extract the highest possible interest rate out of each supported asset. Dynamo vaults react in real time to interest rate fluctuations across defi venues by rebalancing their allocations in a manner that maximises yield between platforms such as Aave[^1], Compound[^2], Euler[^3] and Fraxlend[^4]. Dynamo vaults allows anyone to participate in their rebalancing process and encourage the decentralisation of the weight rebalancing process by incentivising the process with part of the yield that the respective vaults generate from a rebalancing proposal. The Dynamo infrastructure is designed in a manner that aims to maximise utilisation by the broader defi space allowing anyone to build on top of it.
 
-The Dynamo yield optimizer aggregates different lending markets such as AAVE[^1], Compound[^2],
-and Euler[^3] to extract the highest possible interest out of each supported asset by reacting in real-time to interest rate fluctuations across DeFi venues.
-We achieve this by rebalancing large portions of the total value locked between multiple lending markets to capture the added value that can be generated through active capital management.
+Dynamo vaults can facilitate a wide array of use cases with the optimisation of liquidity provision in stableswap pools being just one example of Dynamo's capabilities. The upcoming integration of Dynamo vaults with the Balancer V2 boosted pool framework will act as a proof of concept by allowing liquidity providers to take advantage of Dynamo's boosted pools in order to optimise their liquidity. Dynamo's infrastructure can accelerate the development of liquidity for decentralised stablecoins and other assets by allowing liquidity providers to generate an optimised lending yield out of their idle liquidity. The integration of Dynamo vaults with stableswap pools will enhance base yields by enabling liquidity providers to use Dynamo pools in order to interact with a multitude of defi protocols in a passive manner.
+
 Capital movement between lending markets is achieved through our [vaults](./Vaults/intro).
 
 ### Citations
@@ -24,3 +16,4 @@ Capital movement between lending markets is achieved through our [vaults](./Vaul
 [^1]: AAVE: [Markets](https://app.aave.com/#/markets)
 [^2]: Compound Finance: [Website](https://compound.finance/)
 [^3]: Euler Finance: [Website](https://www.euler.finance/)
+[^4]: Frax Lending: [Website](https://docs.frax.finance/amo/frax-lending)
