@@ -3,13 +3,8 @@ sidebar_position: 1
 title: Introduction
 ---
 
-At the heart of our protocol are our vaults.
-Each vault is able to allocate 90% of its liquidity to lending markets to generate additional interest.
-Proportions of lending markets are represented by weights that sum up to unity.
-It is important that the weights within the vault can be adjusted in a permissionless manner to drive decentralisation forward.
-The advantage of this design is that there is no need for the existence of whitelisted accounts that are constantly aware of the current returns by opening the vault rebalancing process to every user of the protocol.
-Safety mechanisms ensure that no weight distribution is accepted at $t = t_1$ that gives a lower return than was available at $t = t_0$.
-Additional lending protocols can be added to a vault in the future by deploying a suitable
-protocol adapter.
-All lending markets that support a newly added asset are then deployed as token adapters and logged by an adapter registry and are immediately available for use within the vault.
-Each vault is therefore a pool of capital that represents a particular asset that is deposited into the vault by its users and which asset is allocated dynamically across the underlying markets for the generation of yield.
+Dynamo vaults are the epicenter of Dynamo's infrastructure and their task is to maximise the yield of the assets that liquidity providers and other users provide to the protocol. Dynamo vaults allocate 90% of their liquidity to the underlying lending markets in proportions that are represented by weights that sum up to unity. Vault weights are subject to change through a process that allows independent strategists to submit weight proposals for specific Dynamo vaults in exchange for 1% of the yield that the vaults generate as a result of the proposed allocation.
+
+Dynamo vaults are completely decentralised and everyone is allowed to engage with the weight management process which is entirely permissionless. By opening up the weight management process to the defi community Dynamo vaults are able to optimise the vault management process through it's complete decentralisation. The decentralisation of the vault reweight process eliminates the need for the existence of whitelisted accounts as every defi user can participate in the capital allocation process enabling Dynamo vaults to offer an outsized performance to their users. Safety mechanisms ensure that no weight distribution is accepted at t = t1 that gives a lower return than was available at t = t0.
+
+Dynamo vaults can integrate with a multitude of defi protocols in the future with the deployment of suitable protocol adapters enabling Dynamo vaults to stay up to date with defi yield opportunities as the defi space evolves over time. The integration of new protocols with the Dynamo architecture will expand the range of venues that can be utilised by the underlying Dynamo vaults enabling the further optimisation of the yield generation process. Dynamo vaults are essentially a pool of capital with the objective of generating the highest possible yield for each supported asset in a diversified manner.
