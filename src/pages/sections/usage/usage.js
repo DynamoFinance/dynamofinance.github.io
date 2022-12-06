@@ -30,8 +30,7 @@ function Strategist() {
       <div className="col col--6 padding-vert--lg padding-right--lg">
         <h1 style={{ textAlign: "left" }}>Strategists earn revenue</h1>
         <div style={{ textAlign: "justify" }}>
-          Become a strategist and earn 1% of our revenue by proposing a better
-          set of weight that improve our APY.{" "}
+          Become a strategist and earn part of our revenue by improving our APY.{" "}
         </div>
         <div style={{ textAlign: "right" }}>
           <a href={useBaseUrl("docs/Dynamo/base_pool_architecture")}>
@@ -55,7 +54,7 @@ function Vaults() {
       </div>
 
       <div className="col col--6 margin-vert--xl">
-        <h1 style={{ textAlign: "right" }}>Our vaults</h1>
+        <h1 style={{ textAlign: "right" }}>Vaults</h1>
         <div style={{ textAlign: "justify" }}>
           Our ERC-4626 vaults rebalance idle liquidity between different
           whitelisted lending protocols to always bring the best interest rates

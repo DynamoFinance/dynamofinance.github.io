@@ -21,7 +21,9 @@ const FeatureList = [
   {
     title: "Liquidity mining",
     Svg: require("@site/static/img/chart.svg").default,
-    description: <>Farm Balancer liquidity rewards by stking your LP tokens.</>,
+    description: (
+      <>Farm Balancer liquidity rewards by staking your LP tokens.</>
+    ),
   },
 ];
 
