@@ -56,9 +56,8 @@ function Vaults() {
       <div className="col col--6 margin-vert--xl">
         <h1 style={{ textAlign: "right" }}>Vaults</h1>
         <div style={{ textAlign: "justify" }}>
-          Our ERC-4626 vaults rebalance idle liquidity between different
-          whitelisted lending protocols to always bring the best interest rates
-          to our users.{" "}
+          Rebalance idle liquidity between different whitelisted lending
+          protocols.{" "}
         </div>
         <div style={{ textAlign: "right" }}>
           <a href={useBaseUrl("docs/Dynamo/Vaults/governance")}>
