@@ -1,11 +1,11 @@
 ---
-sidebar_position: 2
+sidebar_position: 8
 title: Base pool architecture
 ---
 
 The graph below serves as a visualisation of Dynamo's base pool architecture:
 
-![3pool](../assets/base_pool.png)
+![Base pool architecture](../../assets/base_pool.png)
 
 The Dynamo decentralised stablecoin base pool is built on top of the Balancer boosted pool infrastructure and enables liquidity providers to optimise their yield through the use of Dynamo's vault architecture. A Balancer liquidity provider (BLP) is able to provide liquidity in exchange for the liquidity pool token (termed as USD in this depiction). If a user provides DAI to the liquidity pool, the DAI will be deposited in the DAI linear pool while the liquidity provider will receive USD in return. Due to the way boosted pools work 90% of the DAI that's deposited in the decentralised stablecoin base pool will be routed into the Dynamo DAI vault. The Dynamo DAI vault will then mobilise that capital in supported lending venues.
 
