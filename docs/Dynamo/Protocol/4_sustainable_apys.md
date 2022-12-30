@@ -10,7 +10,7 @@ Lenders can lend out their assets by depositing them into a lending pool on the 
 Asset lending in DeFi can provide lenders with a way to earn passive income by lending out their assets and collecting interest payments. It can also provide borrowers with access to assets that they may not have otherwise been able to obtain.
 
 However, it is important to note that asset lending in DeFi carries risks, as the value of the assets being lent out may fluctuate and may not always maintain their value.
-Below we exemplify interest rate fluctuations (annual percentage yields, APYs) of different assets for two lending markets in a time frame of eight months (Compound[^1]: CDAI, CUSDT, CUSDC, CETH AAVE[^2]: ADAI, AUSDT, AUSDC, WETH data from DefiLlama[^3]).
+Below we exemplify interest rate fluctuations (annual percentage yields, APYs) of different assets for two lending markets in a time frame of eight months (Compound[^1]: CDAI, CUSDT, CUSDC, CETH and AAVE[^2]: ADAI, AUSDT, AUSDC, WETH data from DefiLlama[^3]).
 
 ![DAI](../../assets/dai.png)
 ![USDT](../../assets/usdt.png)
