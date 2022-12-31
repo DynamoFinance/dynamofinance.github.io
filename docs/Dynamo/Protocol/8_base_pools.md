@@ -9,7 +9,7 @@ The decentral stable coin base pool (DEC) consists of Frax, GHO, and DAI, the ce
 
 ![Base pool composition](../../assets/deck/8_b.png)
 
-The graph below serves as a visualisation for our decentralised stablecoin (DEC) base pool:
+The graph below serves as an in-depth visualization for our DEC base pool:
 
 ![Base pool architecture](../../assets/base_pool.png)
 
