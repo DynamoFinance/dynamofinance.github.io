@@ -5,7 +5,7 @@ title: Base pools
 
 ![Base pool composition](../../assets/deck/8_b.png)
 
-The graph below serves as a visualisation of Dynamo's base pool architecture for our decentralised stablecoin (DEC) base pool:
+The graph below serves as a visualisation for our decentralised stablecoin (DEC) base pool:
 
 ![Base pool architecture](../../assets/base_pool.png)
 
