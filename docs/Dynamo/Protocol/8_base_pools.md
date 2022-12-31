@@ -1,9 +1,11 @@
 ---
 sidebar_position: 8
-title: Base pool architecture
+title: Base pools
 ---
 
-The graph below serves as a visualisation of Dynamo's base pool architecture:
+![Base pool composition](../../assets/deck/8_b.png)
+
+The graph below serves as a visualisation of Dynamo's base pool architecture for our DEC base pool:
 
 ![Base pool architecture](../../assets/base_pool.png)
 
