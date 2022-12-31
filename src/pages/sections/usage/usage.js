@@ -33,7 +33,7 @@ function Strategist() {
           Become a strategist and earn part of our revenue by improving our APY.{" "}
         </div>
         <div style={{ textAlign: "right" }}>
-          <a href={useBaseUrl("docs/Dynamo/base_pool_architecture")}>
+          <a href={useBaseUrl("docs/Dynamo/Protocol/base_pools")}>
             {" "}
             <b>Read more</b>
           </a>
