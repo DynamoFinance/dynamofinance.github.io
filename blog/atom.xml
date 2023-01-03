@@ -2,11 +2,37 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dynamofinance.github.io/blog</id>
     <title>Dynamo Blog</title>
-    <updated>2022-11-13T00:00:00.000Z</updated>
+    <updated>2023-01-03T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dynamofinance.github.io/blog"/>
     <subtitle>Dynamo Blog</subtitle>
     <icon>https://dynamofinance.github.io/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Vault development]]></title>
+        <id>vault-development</id>
+        <link href="https://dynamofinance.github.io/blog/vault-development"/>
+        <updated>2023-01-03T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Happy new year Dynamos!]]></summary>
+        <content type="html"><![CDATA[<p>Happy new year Dynamos! 🎉</p><p>We are progressing in the development of our ERC-4626 vault.
+We plan to apply this vault structure within our decentralised base pool that we deploy as a boosted pool on Balancer V2.</p><p>A general diagram for the infrastructure can be seen below, however, an overall overview will be posted as a separat part of the documentation.
+Furthermore, we will update this blog post with new insights about development steps.</p><p><img loading="lazy" alt="Vault" src="/assets/images/vault-c1109c70e909563c54d2060132092d99.png" width="1007" height="771" class="img_ev3q"></p><p>Above the blue parts (Assetmanager) are Vyper contracts that have been developed internally within the past months.
+Those asset manager interact with linear pools as developed by Balancer.
+All linear pools are incorporated in a boosted stable pool.
+Hence we are able to shift most of the liquidity to the ERC-4626 vaults, which will then be deployed to different lending markets (e.g., AAVE or Compound).</p><p>The proportions of the underlying lending markets are defined by asset-specific Strategies.
+In order to participate as a Strategist, a new set of weights has to be proposed.
+This new set of weights has to increase the APY of the asset-specific vault.
+If it does, the Strategy goes live and the Strategist earns part of the revenue that is collected while the Strategy is active.</p><p>The governance part of the ERC-4626 vault will be released soon as well.</p>]]></content>
+        <author>
+            <name>ehjc</name>
+            <uri>https://github.com/f3rmion</uri>
+        </author>
+        <author>
+            <name>Ben Scherry</name>
+            <uri>https://github.com/justingreenberg</uri>
+        </author>
+        <category label="vault" term="vault"/>
+        <category label="erc-4626" term="erc-4626"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Development grant]]></title>
         <id>balancer-grant</id>
