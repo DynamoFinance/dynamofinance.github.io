@@ -60,7 +60,7 @@ function Vaults() {
           protocols.{" "}
         </div>
         <div style={{ textAlign: "right" }}>
-          <a href={useBaseUrl("docs/Dynamo/Vaults/governance")}>
+          <a href={useBaseUrl("docs/Dynamo/Vaults/intro")}>
             {" "}
             <b>Read more</b>
           </a>
