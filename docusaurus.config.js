@@ -109,8 +109,8 @@ const config = {
                 to: "/docs/intro",
               },
               {
-                label: "Vaults",
-                to: "/docs/Dynamo/Vaults/intro",
+                label: "Vault",
+                to: "/docs/Dynamo/Vault/intro",
               },
             ],
           },
