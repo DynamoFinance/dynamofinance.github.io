@@ -3,7 +3,6 @@ slug: balancer-grant
 title: Development grant
 authors: [rohmanus, max, greenbergz, ehjc]
 tags: [balancer, development, grant]
-image: https://i.imgur.com/mErPwqL.png
 ---
 
 The team at Balancer Grants is proud to announce the approval of the grant application by Dynamo to use Balancer V2 architecture to build a yield aggregator for decentralised stablecoins and other assets such as Ethereum staking derivatives by aggregating lending markets such as Aave and Compound.

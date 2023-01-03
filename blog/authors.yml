@@ -1,23 +1,29 @@
 ehjc:
   name: ehjc
-  title: Core
+  title: Head of R&D
   url: https://github.com/f3rmion
   image_url: https://pbs.twimg.com/profile_images/1562388428960006144/bItuzgAV_400x400.jpg
 
 rohmanus:
   name: Rohmanus
-  title: Core
+  title: Head of BizDev
   url: https://twitter.com/RohmanusC
   image_url: https://pbs.twimg.com/profile_images/1455325167228440579/38hdzAOc_400x400.jpg
 
 max:
   name: Max Entropy
-  title: Core
+  title: Head of Communications
   url: https://twitter.com/0xMaxEntropy
   image_url: https://pbs.twimg.com/profile_images/1138346724282503168/9g8zYema_400x400.png
 
 greenbergz:
   name: greenbergz
-  title: Core
+  title: Lead Front-end Engineer
   url: https://github.com/justingreenberg
   image_url: https://github.com/justingreenberg.png
+
+ben:
+  name: Ben Scherry
+  title: Lead Smart-Contract Engineer
+  url: https://github.com/justingreenberg
+  image_url: https://github.com/scherrey.png
