@@ -45,7 +45,7 @@ const config = {
           remarkPlugins: [math],
           rehypePlugins: [katex],
           editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+            "https://github.com/DynamoFinance/dynamofinance.github.io/tree/main/",
         },
         blog: {
           showReadingTime: true,
@@ -54,7 +54,7 @@ const config = {
           remarkPlugins: [math],
           rehypePlugins: [katex],
           editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+            "https://github.com/DynamoFinance/dynamofinance.github.io/tree/main/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
