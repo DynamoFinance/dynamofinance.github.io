@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-title: Base pools
+title: Base pool
 ---
 
 We aim to build different Dynamo base pools to cover a wide range of liquidity products in the near future.

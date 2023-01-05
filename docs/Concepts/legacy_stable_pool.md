@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Legacy stable pools
+title: Legacy stable pool
 ---
 
 A stablecoin is a type of cryptocurrency that is designed to maintain a stable value, usually pegged to a fiat currency such as the US dollar.
