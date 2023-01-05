@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdynamo_docs=self.webpackChunkdynamo_docs||[]).push([[3023],{14050:a=>{a.exports=JSON.parse('{"label":"grant","permalink":"/blog/tags/grant","allTagsPath":"/blog/tags","count":1}')}}]);
