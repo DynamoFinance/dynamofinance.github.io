@@ -110,7 +110,7 @@ const config = {
               },
               {
                 label: "Vault",
-                to: "/docs/Dynamo/Vault/intro",
+                to: "/docs/Products/Vault",
               },
             ],
           },
@@ -136,7 +136,7 @@ const config = {
               },
               {
                 label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
+                href: "https://github.com/DynamoFinance",
               },
             ],
           },

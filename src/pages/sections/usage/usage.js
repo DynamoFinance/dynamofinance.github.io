@@ -33,7 +33,7 @@ function Strategist() {
           Become a strategist and earn part of our revenue by improving our APY.{" "}
         </div>
         <div style={{ textAlign: "right" }}>
-          <a href={useBaseUrl("docs/Dynamo/Protocol/base_pools")}>
+          <a href={useBaseUrl("docs/Concepts/base_pools")}>
             {" "}
             <b>Read more</b>
           </a>
@@ -60,7 +60,7 @@ function Vaults() {
           protocols.{" "}
         </div>
         <div style={{ textAlign: "right" }}>
-          <a href={useBaseUrl("docs/Dynamo/Vaults/intro")}>
+          <a href={useBaseUrl("docs/Products/Vault")}>
             {" "}
             <b>Read more</b>
           </a>

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 3
 title: Sustainable APYs
 ---
 
@@ -12,10 +12,10 @@ Asset lending in DeFi can provide lenders with a way to earn passive income by l
 However, it is important to note that asset lending in DeFi carries risks, as the value of the assets being lent out may fluctuate and may not always maintain their value.
 Below we exemplify interest rate fluctuations (annual percentage yields, APYs) of different assets for two lending markets in a time frame of eight months (Compound[^1]: CDAI, CUSDT, CUSDC, CETH and AAVE[^2]: ADAI, AUSDT, AUSDC, WETH data from DefiLlama[^3]).
 
-![DAI](../../assets/dai.png)
-![USDT](../../assets/usdt.png)
-![USDC](../../assets/usdc.png)
-![ETH](../../assets/eth.png)
+![DAI](../assets/dai.png)
+![USDT](../assets/usdt.png)
+![USDC](../assets/usdc.png)
+![ETH](../assets/eth.png)
 
 The interest rate on a loan is typically determined by supply and demand in the market.
 When there is a high demand for a particular asset and a limited supply, lenders may be able to charge higher interest rates for loans of that asset.

@@ -67,13 +67,13 @@ export default function GetStarted() {
       title: "Dynamo:s",
       description: "Become a liquidity provider.",
       cardImage: "img/liquidity_provider.svg",
-      url: "docs/Dynamo/Protocol/base_pools",
+      url: "docs/Concepts/base_pools",
     },
     {
       title: "Open-source",
       description: "We share our code under MIT.",
       cardImage: "img/software.svg",
-      url: "docs/Dynamo/Vault/intro",
+      url: "docs/Products/Vault",
     },
   ];
   const CardListSoon = [

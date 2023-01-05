@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Introduction
+title: Vault
 ---
 
 Dynamo vaults are the epicenter of Dynamo's infrastructure and their task is to maximise the yield of the assets that liquidity providers and other users provide to the protocol. Dynamo vaults allocate 90% of their liquidity to the underlying lending markets in proportions that are represented by weights that sum up to unity. Vault weights are subject to change through a process that allows independent strategists to submit weight proposals for specific Dynamo vaults in exchange for 1% of the yield that the vaults generate as a result of the proposed allocation.
