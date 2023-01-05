@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: Sustainable APYs
+title: Sustainable Yield
 ---
 
 In decentralized finance (DeFi), asset lending refers to the practice of lending out assets, such as cryptocurrencies or stablecoins, to borrowers in exchange for an interest payment. This process is typically facilitated by DeFi platforms or protocols that connect lenders and borrowers and manage the lending process.
