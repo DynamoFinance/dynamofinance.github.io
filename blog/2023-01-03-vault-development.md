@@ -26,3 +26,9 @@ This new set of weights has to increase the APY of the asset-specific vault.
 If it does, the Strategy goes live and the Strategist earns part of the revenue that is collected while the Strategy is active.
 
 The governance part of the ERC-4626 vault will be released soon as well.
+
+### Update 2023-01-13
+
+Since the Balancer infrastructure does not allow an easy solution for custom asset manager yet (maybe in Balancer V3?), we decided to interface with the ERC-4626 vaults directly.
+
+![Vault-2](./assets/2023-01-13_vault.png)
