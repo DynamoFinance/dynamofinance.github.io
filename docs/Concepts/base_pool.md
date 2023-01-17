@@ -5,9 +5,9 @@ title: Base pool
 
 We aim to build different Dynamo base pools to cover a wide range of liquidity products in the near future.
 Our aim is to develop and deploy a decentralised stable coin, a centralised stable coin and an eth-based base pool.
-The decentral stable coin base pool (DEC) consists of Frax, GHO, and DAI, the central stable coin base pool (CEN) of USDC, DAI, BUSD and GUSD, and the ETH base pool (ETH) consists of native ETH and frxETH.
+The decentral stable coin base pool (DEC) consists of Frax, GHO, and DAI, and the ETH base pool (ETH) consists of native ETH and frxETH.
 
-![Base pool composition](../assets/deck/8_b.png)
+![Base pool composition](../assets/basepools.png)
 
 The graph below serves as an in-depth visualization for our DEC base pool:
 
