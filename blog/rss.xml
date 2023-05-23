@@ -4,10 +4,24 @@
         <title>Dynamo Blog</title>
         <link>https://dynamofinance.github.io/blog</link>
         <description>Dynamo Blog</description>
-        <lastBuildDate>Tue, 03 Jan 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 23 May 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Vault development finished]]></title>
+            <link>https://dynamofinance.github.io/blog/vault-finished</link>
+            <guid>vault-finished</guid>
+            <pubDate>Tue, 23 May 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[We finished our ERC-4626 vault development and the boosted pool integration in the Balancer ecosystem!]]></description>
+            <content:encoded><![CDATA[<p>We finished our ERC-4626 vault development and the boosted pool integration in the Balancer ecosystem!
+After an internal code review from Balancer we received also the first tranche of our grant and
+are now moving forward to the first smart-contract audit.
+The first audit will most probably be happening in early June, and we plan to get a second competitive audit on top.</p><p>Keep tuned!</p><p>Cheers,</p><p>ehjc</p>]]></content:encoded>
+            <category>vault</category>
+            <category>erc-4626</category>
+            <category>balancer</category>
+        </item>
         <item>
             <title><![CDATA[Vault development]]></title>
             <link>https://dynamofinance.github.io/blog/vault-development</link>

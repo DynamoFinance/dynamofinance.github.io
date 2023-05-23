@@ -2,11 +2,29 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dynamofinance.github.io/blog</id>
     <title>Dynamo Blog</title>
-    <updated>2023-01-03T00:00:00.000Z</updated>
+    <updated>2023-05-23T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dynamofinance.github.io/blog"/>
     <subtitle>Dynamo Blog</subtitle>
     <icon>https://dynamofinance.github.io/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Vault development finished]]></title>
+        <id>vault-finished</id>
+        <link href="https://dynamofinance.github.io/blog/vault-finished"/>
+        <updated>2023-05-23T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[We finished our ERC-4626 vault development and the boosted pool integration in the Balancer ecosystem!]]></summary>
+        <content type="html"><![CDATA[<p>We finished our ERC-4626 vault development and the boosted pool integration in the Balancer ecosystem!
+After an internal code review from Balancer we received also the first tranche of our grant and
+are now moving forward to the first smart-contract audit.
+The first audit will most probably be happening in early June, and we plan to get a second competitive audit on top.</p><p>Keep tuned!</p><p>Cheers,</p><p>ehjc</p>]]></content>
+        <author>
+            <name>ehjc</name>
+            <uri>https://github.com/f3rmion</uri>
+        </author>
+        <category label="vault" term="vault"/>
+        <category label="erc-4626" term="erc-4626"/>
+        <category label="balancer" term="balancer"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Vault development]]></title>
         <id>vault-development</id>

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdynamo_docs=self.webpackChunkdynamo_docs||[]).push([[1742],{79903:a=>{a.exports=JSON.parse('{"label":"erc-4626","permalink":"/blog/tags/erc-4626","allTagsPath":"/blog/tags","count":2}')}}]);
