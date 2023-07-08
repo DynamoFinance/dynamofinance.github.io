@@ -1,6 +1,182 @@
 ---
 sidebar_position: 2
-title: Implementation
+title: Dynamo4626
 ---
 
-We will add the technical specifications of our ERC-4626 vault soon.
+import { Mermaid } from 'mdx-mermaid/Mermaid'
+
+# Overall architecture
+
+Red letters are contract addresses.
+Bold black items are actual ERC20/Pool assets. Blue zone is Vyper contract code.
+The dotted line LPAdapters are logical contracts but likely will just be code in the larger AssetManager contract code base which forward requests to deployments of Lending Platform Specific Adapters.
+Green zones are Balancer Linear Pools which will require small amounts of Solidity code to construct properly.
+Yellow zone is the Balancer Boosted Pool which will require some Solidity code to fully implement/integrate.
+At the bottom outside the yellow zone are the various Lending Platforms.
+
+![dUSD](../../../static/img/dUSDdiagram.png)
+
+### Use Cases for Dynamo4626 Contracts
+
+The Dynamo4626 Contracts will act as AssetManagers for the Balancer LinearPools but can be treated as their own Vaults/Pools outside of the deployed Balancer Vault.
+
+_Given:_
+
+Governance = address variable - Governance contract responsible for this Vault.
+
+Being ERC-4626 Contracts, they expose the full [ERC-20 ABI](https://eips.ethereum.org/EIPS/eip-20).
+
+### Dynamo4626 Transactional Use Cases
+
+Definitions:
+
+asset - underlying token by which value transactions are ultimately denominated.
+For DynamoUSD this would be one of DAI, FRAX, or GHO initially.
+
+shares - the 4626 token representing the investment of liquidity to ultimately be converted back into assets.
+For DynamoUSD this would be dDAI, dFRAX, dGHO, and dUSD.
+
+destination - the address of the contract or wallet to receive the value of the transaction.
+
+owner - the address of the contract that holds the assets in question.
+
+Transfer - struct for transaction definition containing a signed qty and Adapter addr.
+
+#### deposit (assets, destination) -> shares
+
+Deposit fixed number of X assets for destination to receive Y shares representing the new investment.
+Shares will be credited to destination address.
+
+<Mermaid chart={`sequenceDiagram
+    participant u as Investor
+    participant a4626 as d<Token>4626    
+    participant lpa as LP Adapter
+    participant asset as <ERC20 Asset Token><br>"asset"
+    #participant lp as LP
+    #participant share as <ERC20 LP Share>
+    participant eth as Ethereum Mainnet
+    note over a4626: a4626 = d<Token>4626 contract address
+    autonumber
+    u->>a4626:deposit(_asset_amount = 500, _receiver = Investor)
+        note over a4626, asset: We must first move the funds into the contract's balance so _getBalanceTxs will know how to best re-adjust.    
+        a4626-->>a4626: Shares = _convertToShares(_asset_amount)
+        a4626->>asset: transferFrom(from=Investor, to=a4626, amt=500)
+        Note over asset: balanceOf[Investor]-=500<br>balanceOf[d<Token>4626]+=500
+        asset->>a4626: amt=500
+        a4626-->>a4626: balanceAdapters(_target_asset_balance=0)
+        Note over a4626: See balanceAdapters use case diagram below.
+        Note over a4626: Compute most efficient rebalancing transactions.<br>Txs = _genBalanceTxs()
+        a4626-->>a4626: _genBalanceTxs() -> Transfer[]
+        loop for Tx: Transfer in Txs<br>(limited to maxTxs iterations)
+            alt if Tx.Qty==0
+                note over a4626: break
+            else if Tx.Qty > 0
+                a4626->>lpa: (Tx.Adapter).deposit(Tx.Qty)
+                    note over lpa: asset.balanceOf[d<Token>4626]-=Tx.Qty<br>asset.balanceOf[LP]+=Tx.Qty<br>share.balanceOf[d<Token>4626]+=~Tx.Qty          
+            else (elif Tx.Qty < 0)
+                a4626->>lpa: (Tx.Adapter).withdraw(<br>asset_amount=-1 * Tx.Qty,<br>withdraw_to=d<Token>4626)
+                    note over lpa: asset.balanceOf[LP]-=~Tx.Qty<br>share.balanceOf[d<Token>4626]-=~Tx.Qty<br>asset.balanceOf[d<Token>4626]+=Tx.Qty
+            end
+        end
+        a4626->a4626: Assets = _mint(dest=Investor, amt=Shares)
+            note over a4626:d<Token>4626.balanceOf[Investor]+=Shares
+        a4626->u: return Shares`} />
+
+#### mint (shares, destination) -> assets
+
+Deposit X assets where X is determined to be the quantity required to receive Y shares representing the new investment.  
+Shares will be credited to destination address. For DynamoUSD this would be the LinearPool which this
+contract is an AssetManager for.
+
+#### withdraw (assets, destination, owner) -> shares
+
+Convert X shares controlled by owner back to Y assets to be credited to destination.
+
+<Mermaid chart={`sequenceDiagram
+participant u as Investor
+participant a4626 as d<Token>4626
+participant lpa as LP Adapter
+participant asset as <ERC20 Asset Token><br>"asset"
+#participant lp as LP
+#participant share as <ERC20 LP Share>
+participant eth as Ethereum Mainnet
+    autonumber
+    u->>a4626:withdraw(asset_amount = 500, receiver = Investor, owner = Investor)
+    Note over a4626: Map asset_amount to share value<br>& get owner's share balance.
+    a4626-->>a4626: shares = _convertToShares(asset_amount)
+    a4626-->>a4626: xcbal = self.balanceOf[owner]
+    Note over a4626: Is the owner not the receiver?
+    alt if msg.sender != owner
+        Note over a4626: Confirm msg.sender has adequate allowance from owner.
+        Note over a4626: Reduce msg.senders allowance from owner.
+    end
+    Note over a4626: Reduce owner balance of shares.<br>Reduce total supply of shares.
+    a4626->>eth: log Transfer(owner, 0, shares) (Burn shares)
+    a4626-->>a4626: balanceAdapters(_target_asset_balance = asset_amount)
+    Note over a4626: See balanceAdapters use case diagram below.
+    Note over a4626: Move asset tokens to receiver.
+    a4626->>asset: transfer(Investor, asset_amount)
+    Note over a4626: Update Vault's total_assets_withdrawn by asset_amount.
+    a4626->>eth: log Withdraw(msg.sender, Investor, owner, asset_amount, shares)
+    a4626->>u: return shares`} />
+
+#### withdraw (assets, destination, owner) -> shares
+
+Convert X shares controlled by owner where X is determined to be the quantity required to receive Y assets
+(to be credited to destination) resulting from the share value of the investment.
+
+### Dynamo4626 Supporting Functions
+
+There may be matching preview* and max* functions for each of the deposit/mint/redeem/withdraw functions.
+These simply provide read-only outcome 'previews' or maximum values possible given current balances respectively.
+
+### Dynamo4626 Configuration/Deployment Use Cases
+
+#### activateStrategy()
+
+Checks to see if the Governance contract has a new strategy ready to activate.
+If so, makes it the new current strategy then calls rebalance to put it into effect.
+This function may be called by anyone.
+
+#### balanceAdapters(target_asset_balance = 0)
+
+Compares the current cash & asset values across the lending platforms, computes an
+optimum set of transactions necessary to best meet the current Strategy's desired
+balances, then proceeds to move assets across the lending platforms to best meet the
+current strategy. If target_asset_balance == 0 then it is a request to move all asset into
+various adapters. If target_asset_balance > 0 then it is a request to move this sum of
+assets into the 4626 vault so it can be available for a withdrawl and move the rest of the
+assets to adapters according to the current Strategy.
+
+This function may be called by anyone.
+
+balanceAdapters Use Case
+
+<Mermaid chart={`sequenceDiagram 
+    participant user as Calling Wallet
+    participant a4626 as d<Token>4626
+    participant fund as FundsAllocator
+    #participant lpa as LP Adapter
+    participant eth as Ethereum Mainnet
+    autonumber
+    user->>a4626: balanceAdapters(_target_asset_balance=0)
+    Note over a4626:Call _getCurrentBalances to copy state of the 4626 because all functions<br>in FundsAllocator are stateless so must be passed these values.<br>_total_assets = current assets in vault<br>_total_ratios = sum of strategy ratios in vault<br>_pool_states = [each pool struct = {adapter, current assets in pool, ratio for this adapter},...]
+    a4626->>fund: getBalanceTxs(_target_asset_balance,<br>_min_proposer_payout,<br>_total_assets,<br>_total_ratios,<br>_pool_states)
+    Note over fund:The functions in the FundsAllocator are upgradable but have<br>no access to Vault data beyond what is passed to it.<br>It's purpose is to create a list of transactions that<br>will optimally result in final balances of assets<br>in the 4626 Vault + move funds across the adapters to<br>achieve tarets established by the current strategy.
+    fund->>a4626: txs = TXS, blocked_adapters = [Blocked_Adapters]
+    Note over a4626: If there are blocked adapters then<br>set their strategy ratios to zero.
+    loop for Adapter: adapter in blocked_adapters
+        alt if Adapter != 0
+            Note over a4626: Funds missing from this Adapter!<br>Revise strategy ratio and publish PoolLoss event!
+            Note over a4626: new_strat = self.strategy[Adapter]<br>new_strat.ratio = 0<br>self.strategy[Adapter] = new_strat
+            a4626->>eth: log PoolLoss(Adapter, new_strat.last_asset_value, self._poolAssets(Adapter))
+        end
+    end
+    Note over a4626: Now actually move the funds for qualified txs.
+    loop for Dtx: dtx in txs
+        alt if Dtx.qty > 0 and Dtx.qty > Minimum TX Value from Strategy
+            Note over a4626: Execute a deposit into the adapter<br>large enough to be worth the gas<br>from the 4626 Vault.
+        else if Dtx.qrt < 0:
+            Note over a4626: Execute a withdraw from the adapter into the 4626 Vault.
+        end
+    end`} />
