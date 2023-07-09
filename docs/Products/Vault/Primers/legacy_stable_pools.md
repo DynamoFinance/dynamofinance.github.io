@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 title: Legacy stable pool
 ---
 
@@ -28,7 +28,7 @@ For liquidity providers, participating in a stablecoin pool can provide a source
 However, most of the liquidity in such stablecoin pools sits idle since the amount of swaps covers only about 10% actively.
 Below we show annual percentage yields (APYs) and total value locked (TVL) within Curve's 3pool stablecoin pool. The average APY is below one percent (data from DefiLlama[^2]).
 
-![Legacy stable pool](../assets/deck/4.png)
+![Legacy stable pool](../../../assets/deck/4.png)
 
 ### Citations
 

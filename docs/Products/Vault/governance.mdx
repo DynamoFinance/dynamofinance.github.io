@@ -1,9 +1,9 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 title: Governance
 ---
 
-import { Mermaid } from 'mdx-mermaid/Mermaid'
+import { Mermaid } from "mdx-mermaid/Mermaid";
 
 The Dynamo protocol crowd sources optimal wealth allocations across various liquidity/lending platforms. Such an
 allocation, proposed or active, is called a Strategy. The expectation that just about anyone is allowed to propose a Strategy introduces a likely significantly higher rate of submissions across the Ethereum ecosystem. The typical voting method of deciding which decision to make is both unweildy and would require far too much active participation by others who have investments in the Dynamo protocol. On the other hand, if the protocol has no restrictions on who and when Strategies can be proposed nor a process in which to edjudicate their acceptance, bad actors could use this openess as a vector to attempt denial of service attacks that would break down then entire value of the protocol.
@@ -45,7 +45,8 @@ L<sub>GOV</sub>[MAX_GUARDS] = Variable - List of addresses of Governance Guards 
 
 Strategy = (Proposed) Struct = { Nonce, Proposer Addr, Weights[], T<sub>SUBMITTED</sub>, T<sub>ACTIVATED</sub>, Withdrawn, len(L<sub>GOV</sub>), Votes<sub>ENDORSE</sub>, Votes<sub>REJECT</sub> }
 
-<Mermaid chart={`sequenceDiagram
+<Mermaid
+  chart={`sequenceDiagram
     participant P as Proposer
     participant C1 as Governance Contract
     participant N as Ethereum Network
@@ -64,7 +65,8 @@ Strategy = (Proposed) Struct = { Nonce, Proposer Addr, Weights[], T<sub>SUBMITTE
     Note over C1: Construct the New Strategy<br>TSubmitted=now()<br>TActive=0<br>Nonce=self.NextNonce<br>self.NextNonce+=1<br>VoterCount=len(self.LGOV)<br>Strategy={*Strategy,TSubmitted,TActive,Nonce,Withdrawn=False,VoterCount,VotesEndorse=[],VotesReject=[]}
     Note Over C1: self.PendingStrategy = Strategy
     C1-->>N: Emit Event StrategyProposal(Strategy)
-    C1->>P: return self.PendingStrategy.Nonce`} />
+    C1->>P: return self.PendingStrategy.Nonce`}
+/>
 
 ### Withdrawing a Strategy
 
@@ -72,7 +74,8 @@ If there is a Pending Strategy, the **original proposer** may elect to withdraw 
 
 #### withdrawStrategy
 
-<Mermaid chart={`sequenceDiagram
+<Mermaid
+  chart={`sequenceDiagram
     participant P as Proposer
     participant C1 as Governance Contract
     participant N as Ethereum Network
@@ -87,7 +90,8 @@ If there is a Pending Strategy, the **original proposer** may elect to withdraw 
     Note over C1: Confirm msg.sender == self.PendingStrategy.ProposerAddress
     Note over C1:Set self.PendingStrategy.Withdrawn = True
     C1-->>N: Emit Event StrategyWithdrawal(Nonce)
-    C1-->>P: return True`} />
+    C1-->>P: return True`}
+/>
 
 ### Evaluating and Interceding on a Proposed Strategy
 
@@ -113,7 +117,8 @@ L<sub>GOV</sub>[MAX_GUARDS] = Variable - List of addresses of Governance Guards 
 
 Strategy = (Proposed) Struct = { Nonce, Proposer Addr, Weights[], T<sub>SUBMITTED</sub>, T<sub>ACTIVATED</sub>, Withdrawn, len(L<sub>GOV</sub>), Votes<sub>ENDORSE</sub>, Votes<sub>REJECT</sub> }
 
-<Mermaid chart={`sequenceDiagram
+<Mermaid
+  chart={`sequenceDiagram
     participant G as Guard
     participant C1 as Governance Contract
     participant N as Ethereum Network
@@ -130,7 +135,8 @@ Strategy = (Proposed) Struct = { Nonce, Proposer Addr, Weights[], T<sub>SUBMITTE
     Note over C1: msg.sender is not in self.PendingStrategy.VoteReject and <br> msg.sender is not in self.PendingStrategy.VoteEndorse
     Note over C1:self.PendingStrategy.VoteReject.Append(msg.sender)
     C1-->>N: Emit Event StrategyVote(Nonce, GuardAddress, Endorse=False)
-    C1-->>G: return True`} />
+    C1-->>G: return True`}
+/>
 
 #### endorseStartegy
 
@@ -144,7 +150,8 @@ L<sub>GOV</sub>[MAX_GUARDS] = Variable - List of addresses of Governance Guards 
 
 Strategy = (Proposed) Struct = { Nonce, Proposer Addr, Weights[], T<sub>SUBMITTED</sub>, T<sub>ACTIVATED</sub>, Withdrawn, len(L<sub>GOV</sub>), Votes<sub>ENDORSE</sub>, Votes<sub>REJECT</sub> }
 
-<Mermaid chart={`sequenceDiagram
+<Mermaid
+  chart={`sequenceDiagram
     participant G as Guard
     participant C1 as Governance Contract
     participant N as Ethereum Network
@@ -161,7 +168,8 @@ Strategy = (Proposed) Struct = { Nonce, Proposer Addr, Weights[], T<sub>SUBMITTE
     Note over C1: msg.sender is not in self.PendingStrategy.VoteReject and <br> msg.sender is not in self.PendingStrategy.VoteEndorse
     Note over C1:self.PendingStrategy.VoteEndorse.Append(msg.sender)
     C1-->>N: Emit Event StrategyVote(Nonce, GuardAddress, Endorse=True)
-    C1-->>G: return True`} />
+    C1-->>G: return True`}
+/>
 
 ### Activating a Proposed Strategy
 
@@ -181,7 +189,8 @@ L<sub>GOV</sub>[MAX_GUARDS] = Variable - List of addresses of Governance Guards 
 
 Strategy = (Proposed) Struct = { Nonce, Proposer Addr, Weights[], T<sub>SUBMITTED</sub>, T<sub>ACTIVATED</sub>, Withdrawn, len(L<sub>GOV</sub>), Votes<sub>ENDORSE</sub>, Votes<sub>REJECT</sub> }
 
-<Mermaid chart={`sequenceDiagram
+<Mermaid
+  chart={`sequenceDiagram
     participant A as Any Role
     participant C1 as Governance Contract
     participant D as Dynamo Vault
@@ -197,7 +206,8 @@ Strategy = (Proposed) Struct = { Nonce, Proposer Addr, Weights[], T<sub>SUBMITTE
     Note over C1:self.PendingStrategy = self.CurrentStrategy
     C1->>D: PoolRebalancer(self.CurrentStrategy)
     C1-->>N: Emit Event StrategyActivation(self.CurrentStrategy)
-    C1-->>A: return True`} />
+    C1-->>A: return True`}
+/>
 
 ### Governance of Governance
 
@@ -214,7 +224,8 @@ MAX_GUARDS = Constant - Maximum number of Guards who may vote on Proposed Strate
 
 L<sub>GOV</sub>[MAX_GUARDS] = Variable - List of addresses of Governance Guards who vote on Strategy Submissions.
 
-<Mermaid chart={`sequenceDiagram
+<Mermaid
+  chart={`sequenceDiagram
     participant OG as Owner
     participant C1 as Governance Contract
     participant N as Ethereum Network
@@ -231,7 +242,8 @@ L<sub>GOV</sub>[MAX_GUARDS] = Variable - List of addresses of Governance Guards 
     Note over C1: GuardAddress != ZERO_ADDRESS
     Note over C1: self.LGOV.Append(GuardAddress)
     C1-->>N: Emit Event NewGuard(GuardAddress)
-    C1-->>OG: return True`} />
+    C1-->>OG: return True`}
+/>
 
 #### removeGuard
 
@@ -245,7 +257,8 @@ L<sub>GOV</sub>[MAX_GUARDS] = Variable - List of addresses of Governance Guards 
 
 Votes = map of Guard addr -> Contract Addr for votes on Governance Contract for Vault
 
-<Mermaid chart={`sequenceDiagram
+<Mermaid
+  chart={`sequenceDiagram
     participant OG as Owner
     participant C1 as Governance Contract
     participant N as Ethereum Network
@@ -259,7 +272,8 @@ Votes = map of Guard addr -> Contract Addr for votes on Governance Contract for 
     Note over C1: Erase old Guard's vote<br>self.Votes[GuardAddress] = ZERO_ADDRESS    
     Note over C1: Replace Deleted Guard with Last Guard in List: <br> Index = position of GuardAddress in self.LGOV <br> Last_Pos = len(self.LGOV)<br> self.LGOV[Index] = self.LGOV[Last_Pos] <br> self.LGOV[Last_Pos] = ZERO_ADDRESS
     C1-->>N: Emit Event GuardRemoved(GuardAddress)
-    C1-->>OG: return True`} />
+    C1-->>OG: return True`}
+/>
 
 #### swapGuard
 
@@ -273,7 +287,8 @@ L<sub>GOV</sub>[MAX_GUARDS] = Variable - List of addresses of Governance Guards 
 
 Votes = map of Guard addr -> Contract Addr for votes on Governance Contract for Vault
 
-<Mermaid chart={`sequenceDiagram
+<Mermaid
+  chart={`sequenceDiagram
     participant OG as Owner
     participant C1 as Governance Contract
     participant N as Ethereum Network
@@ -288,7 +303,8 @@ Votes = map of Guard addr -> Contract Addr for votes on Governance Contract for 
     Note over C1: Erase old Guard's vote<br>self.Votes[OldGuardAddress] = ZERO_ADDRESS
     Note over C1: Replace Old Guard with New Guard: <br> Index = position of OldGuardAddress in self.LGOV <br>  self.LGOV[Index] = NewGuardAddress
     C1-->>N: Emit Event GuardSwap(OldGuardAddress, NewGuardAddress)
-    C1-->>OG: return True`} />
+    C1-->>OG: return True`}
+/>
 
 #### replaceGovernance
 
@@ -303,7 +319,8 @@ Vault = address of Vault Contract which this contract provides governance over.
 
 Votes = map of Guard addr -> Contract Addr for votes on Governance Contract for Vault
 
-<Mermaid chart={`sequenceDiagram
+<Mermaid
+  chart={`sequenceDiagram
     participant G as Governor
     participant C1 as Governance Contract
     participant V as Vault Contract
@@ -328,4 +345,5 @@ Votes = map of Guard addr -> Contract Addr for votes on Governance Contract for 
     Note over V: Confirm request is from current<br>Govenance Contract<br>confirm msg.sender = self.GovernanceAddr
     Note over V: Confirm NewGovernance is different<br>confirm NewGovernance != self.GovernanceAddr<br>confirm NewGovernance != ZERO_ADDRESS
         V-->>N: emit NewGovernanceContract(msg.Sender, self.GovernanceAddr, NewGovernance)
-    Note over V: Update Governance Contract<br>self.GovernanceAddr = NewGovernance`} />
+    Note over V: Update Governance Contract<br>self.GovernanceAddr = NewGovernance`}
+/>

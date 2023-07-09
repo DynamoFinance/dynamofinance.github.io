@@ -1,11 +1,11 @@
 ---
-sidebar_position: 2
-title: Dynamo4626
+sidebar_position: 3
+title: ERC-4626
 ---
 
-import { Mermaid } from 'mdx-mermaid/Mermaid'
+import { Mermaid } from "mdx-mermaid/Mermaid";
 
-# Overall architecture
+# Smart-contract architecture
 
 Red letters are contract addresses.
 Bold black items are actual ERC20/Pool assets. Blue zone is Vyper contract code.
@@ -47,7 +47,8 @@ Transfer - struct for transaction definition containing a signed qty and Adapter
 Deposit fixed number of X assets for destination to receive Y shares representing the new investment.
 Shares will be credited to destination address.
 
-<Mermaid chart={`sequenceDiagram
+<Mermaid
+  chart={`sequenceDiagram
     participant u as Investor
     participant a4626 as d<Token>4626    
     participant lpa as LP Adapter
@@ -80,7 +81,8 @@ Shares will be credited to destination address.
         end
         a4626->a4626: Assets = _mint(dest=Investor, amt=Shares)
             note over a4626:d<Token>4626.balanceOf[Investor]+=Shares
-        a4626->u: return Shares`} />
+        a4626->u: return Shares`}
+/>
 
 #### mint (shares, destination) -> assets
 
@@ -92,7 +94,8 @@ contract is an AssetManager for.
 
 Convert X shares controlled by owner back to Y assets to be credited to destination.
 
-<Mermaid chart={`sequenceDiagram
+<Mermaid
+  chart={`sequenceDiagram
 participant u as Investor
 participant a4626 as d<Token>4626
 participant lpa as LP Adapter
@@ -118,7 +121,8 @@ participant eth as Ethereum Mainnet
     a4626->>asset: transfer(Investor, asset_amount)
     Note over a4626: Update Vault's total_assets_withdrawn by asset_amount.
     a4626->>eth: log Withdraw(msg.sender, Investor, owner, asset_amount, shares)
-    a4626->>u: return shares`} />
+    a4626->>u: return shares`}
+/>
 
 #### withdraw (assets, destination, owner) -> shares
 
@@ -152,7 +156,8 @@ This function may be called by anyone.
 
 balanceAdapters Use Case
 
-<Mermaid chart={`sequenceDiagram 
+<Mermaid
+  chart={`sequenceDiagram 
     participant user as Calling Wallet
     participant a4626 as d<Token>4626
     participant fund as FundsAllocator
@@ -179,4 +184,5 @@ balanceAdapters Use Case
         else if Dtx.qrt < 0:
             Note over a4626: Execute a withdraw from the adapter into the 4626 Vault.
         end
-    end`} />
+    end`}
+/>

@@ -1,19 +1,19 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 title: Base pool
 ---
 
 We aim to build different Dynamo base pools to cover a wide range of liquidity products in the near future.
 Our aim is to develop and deploy a decentralised stable coin, a centralised stable coin and an eth-based base pool.
-The decentral stable coin base pool (DEC) consists of Frax, GHO, and DAI, and the ETH base pool (ETH) consists of native ETH and frxETH.
+A potential decentral stable coin base pool (DEC) consists of Frax, GHO, and DAI, and the ETH base pool (ETH) consists of native ETH and frxETH.
 
-![Base pool composition](../assets/basepools.png)
+![Base pool composition](../../../assets/basepools.png)
 
-The graph below serves as an in-depth visualization for our DEC base pool:
+The graph below serves as an in-depth visualization for this DEC base pool:
 
-![Base pool architecture](../assets/base_pool.png)
+![Base pool architecture](../../../assets/base_pool.png)
 
-Our DEC is built on top of the Balancer boosted pool infrastructure and enables liquidity providers to optimise their yield through the use of our vault architecture.
+The DEC is built on top of the Balancer boosted pool infrastructure and enables liquidity providers to optimise their yield through the use of our vault architecture.
 A Balancer liquidity provider (BLP) is able to provide liquidity in exchange for the liquidity pool token (termed as USD in the depiction).
 If a user provides DAI to the liquidity pool, the DAI will be deposited in the DAI linear pool while the liquidity provider will receive USD in return.
 Due to the way boosted pools work 90% of the DAI that is deposited in the DEC will be routed into our DAI vault.

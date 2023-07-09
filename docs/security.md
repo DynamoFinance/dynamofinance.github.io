@@ -1,6 +1,8 @@
 ---
-sidebar_position: 4
-title: Security
+sidebar_position: 3
+title: Security audits
 ---
 
-We are in contact with auditing firms and will publish their security audit report once available.
+### ERC-4626 vault
+
+We will publish our initial audit soon.
