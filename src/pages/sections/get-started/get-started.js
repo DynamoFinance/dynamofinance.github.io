@@ -88,13 +88,6 @@ export default function GetStarted() {
   return (
     <div id="getstarted" className={clsx("greyBanner", styles.greyBanner)}>
       <div className="container margin-bottom--xl">
-        <div className="row">
-          {/*<div className="col col--2"></div>*/}
-          <div className="col col--12 padding-horiz--xl">
-            <p>Our protocol is available on Balancer</p>
-          </div>
-          {/*<div className="col col--2"></div>*/}
-        </div>
         <div
           className="row padding-vert--lg margin-top--lg padding--md"
           style={{
