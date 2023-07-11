@@ -14,12 +14,11 @@ ground for financial innovation.
 However, decentralized stablecoins need to attract liquidity at scale in order to
 become viable and in order for them to achieve this the DeFi space needs to develop
 the right mechanisms for attracting and maintaining liquidity.
-The presented protocol aims to develop a yield-optimized liquidity foundation by
-developing a 3pool comprised of the three decentralized stablecoins that builds on
+The presented protocol develops a yield-optimized liquidity foundation on
 top of Balancer's boosted pool designs in order to offer optimized yields to liquidity
 providers from the integration of swap activity and optimized lending market capital
 allocation that can be offered by the use of our ERC-4626 vaults.
-Each component of our base liquidity pool is connected to its respective vault generating
+Each component of our base liquidity pools is connected to its respective vault generating
 optimized lending market yield in the backend.
 This symbiosis maximizes yield and paves the way for the creation of a liquidity layer for
 decentralized stablecoins.
@@ -46,7 +45,7 @@ highest possible interest rate out of each supported asset.
 Our ERC-4626 vaults react in real time to interest rate fluctuations across DeFi venues by
 rebalancing their allocations in a manner that maximises yield between different whitelisted
 lending platforms.
-Our vaults allows anyone to participate in their rebalancing process and encourage the
+Our vaults allows anyone to participate in this rebalancing process and encourage the
 decentralisation of the weight rebalancing process by incentivising the process with part
 of the yield that the respective vaults generate from a rebalancing proposal.
 Our infrastructure is designed in a manner that aims to maximise utilisation by the broader
@@ -128,8 +127,8 @@ $$
 
 Furthermore, a stablecoin reserve curve has been implemented to allow for swaps between assets
 that are pegged with each other.
-Most common examples are US Dollar tracked stablecoins (_e.g._, DAI, Tether, and USDC),
-and assets that track the price of Bitcoin (_e.g._, wBTC, renBTC, and sBTC).
+Most common examples are US Dollar tracked stablecoins (_e.g._, _DAI_, _Tether_, and _USDC_),
+and assets that track the price of Bitcoin (_e.g._, _wBTC_, _renBTC_, and _sBTC_).
 Spot prices are determined by the BP balances, the amplification parameter $A$, and the
 amount of tokens that are being swapped.
 Ideally, it would make sense to simply allow for 1-to-1 swaps between assets, which
@@ -216,7 +215,7 @@ maintaining a large _aDAI_ balance for an extra boost to liquidity providers.
 ### Dynamo Finance vaults
 
 DeFi users want to productively invest their assets in various lending platforms such
-as Aave, Compound, and Fulcrum.
+as Aave or Compound.
 All those platforms support lending markets for the largest stablecoins and various
 other highly liquid assets.
 Unfortunately, the nature of lending protocols makes the returns on lent assets
@@ -240,7 +239,7 @@ of a yield aggregator and a liquidity network bootstrapped on top of Balancer V2
 By integrating these two components, we develop an optimized stable swap offering that can
 provide sustainable yields at scale to attract and retain large amounts of stablecoin liquidity.
 
-Our yield strategy aggregates lending markets such as Aave, Compound, and Euler to extract
+Our yield strategy aggregates lending markets such as Aave, Compound, and Fraxlend to extract
 the highest possible yield out of each supported asset by reacting in real-time to interest
 rate fluctuations.
 We achieve this by rebalancing our exposure between our whitelisted lending markets to capture
@@ -252,9 +251,12 @@ Below we exemplify this setup for a boosted 3pool consisting of _DAI_/_GHO_/_FRA
 In the case of assets with protocol derived yield sources such as _LUSD_,
 Dynamo vaults can optimize returns by tapping into the associated yield flows
 and auto-compound the additional rewards they generate on behalf of our users.
+The ability to integrate our ERC-4626 vaults with any smart contract that lets us perform
+atomic transactions opens up the possibility of deploying liquidity to other partner
+protocols to generate the best possible returns beyond lending markets.
 
 Our ERC-4626 vault represents the liquidity allocations by weights contributing
-liquidity into the underlying whitelisted lending markets in a manner that ensures
+liquidity into the underlying registered adapters by following a strategy in a manner that ensures
 an optimised return on the allocated capital.
 It is important that the weights within the vault can be adjusted in a permissionless manner.
 The advantage of this design is that there is no need for the existence of whitelisted accounts
@@ -262,22 +264,22 @@ that are constantly aware of the current returns by opening the vault rebalancin
 user of the protocol.
 
 Additional lending protocols can easily be added to a vault in the future by deploying a suitable
-protocol adapter _via_ our protocol factory.
+lending protocol adapter and we do not need to redeploy our vaults for that purpose.
 Each vault is therefore a pool of capital that represents a particular asset that is deposited
 into the vault by its users.
-The asset is allocated dynamically across the whitelisted lending markets for the generation of
+The asset is allocated dynamically across the registered lending markets for the generation of
 yield.
 
 ### Dynamo base pools
 
-We use a boosted pool that includes three linear pools to create a boosted stable liquidity pool.
-The linear pools shift 90% of the linear pool liquidity into an asset specific ERC-4626 vaults,
+We use a boosted pool that includes multiple linear pools to create a boosted stable liquidity pool.
+The linear pools shift 90% of the linear pool liquidity into asset specific ERC-4626 vaults,
 which distribute the liquidity within the registered lending markets according to the active
 strategy.
-The remaining liquidity (10%) is earmarked for swaps within the pool.
+The remaining liquidity (10%) is earmarked for swaps within the boosted pool.
 A liquidity provider can thus provide one of the assets in the pool and receive the Dynamo
-USD (_dUSD_) liquidity pool token as a receipt.
-Below we exemplify this setup for a boosted 3pool consisting of _DAI_/_GHO_/_FRAX_,
+liquidity pool token as a receipt.
+Below we exemplify this setup for a boosted 3pool consisting of _DAI_/_GHO_/_FRAX_ (_dUSD_ as receipt token),
 where the _DAI_ vault is shown in detail for clarity.
 
 ![Base pool architecture](../../assets/base_pool.png)
@@ -293,7 +295,8 @@ generated by CRV.
 
 ![Curve 3Pool](../../../static/img/vault_wp_curve_3pool.png)
 
-We extracted annual percentage yields (APY) for all assets that are available in Curve's 3pool.
+We extracted annual percentage yields (APY) for all assets that are available in Curve's 3pool
+from associated lending markets.
 Each asset shows a higher average APY if comparing directly to Curve's 3pool averaged APY.
 This motivates the creation of a liquidity pool that takes some amount of the liquidity to
 deploy it to those higher APY sources.
@@ -318,15 +321,15 @@ the bb-a-USD pool.
 | Curve    | 0.4  | 0.4        | 0.8 |
 | Dynamo   | 1.7  | 1.5        | 3.2 |
 
-The table above lists the average annual percentage yields (APY) for Curve Finance's 3pool
-within 137 days (data covers the range of 2022-09-21 to 2023-02-04, data from DefiLlama)
+The table above lists the average APY for Curve Finance's 3pool within 137 days
+(data covers the range of 2022-09-21 to 2023-02-04, data from DefiLlama)
 and for the Dynamo base pool for the same time range.
 
-As can be seen, the Dynamo APY value for the base pool is much higher compared to Curve's 3pool.
-Hence we are able to outperform a well-established liquidity pool by shifting idle pool liquidity
-to lending markets to activate the full APY potential already without including liquidity incentives.
+As can be seen, the Dynamo APY value for the base pool is higher compared to Curve's 3pool.
+Hence, we outperform a well-established liquidity pool by shifting idle pool liquidity
+to lending markets to activate the full APY potential even without including liquidity incentives.
 Once we include liquidity mining rewards (approx. 1.5-3.6%, values taken from the bb-a-USD pool),
-we are able to obtain one of the highest APY value within the current DeFi market for a liquidity
+we are able to obtain a competitive APY value within the current DeFi market for a liquidity
 pool.
 Note that we approximate liquidity incentives by taking the lowest bb-a-USD value (1.5%) to
 calculate the final Dynamo APY of our base pool.
