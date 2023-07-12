@@ -1,8 +1,8 @@
 ---
 sidebar_position: 3
-title: Security audits
+title: Security
 ---
 
-### ERC-4626 vault
+### Vault
 
-We will publish our initial audit soon.
+We will publish our initial audit of our ERC-4626 vault soon.
