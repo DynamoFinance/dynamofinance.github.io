@@ -67,7 +67,7 @@ export default function GetStarted() {
       title: "Dynamo:s",
       description: "Become a liquidity provider.",
       cardImage: "img/liquidity_provider.svg",
-      url: "docs/Products/Vault/white-paper",
+      url: "docs/Products/Vault/lite-paper",
     },
     {
       title: "Open-source",
