@@ -70,8 +70,8 @@ export default function GetStarted() {
       url: "docs/Products/Vault/lite-paper",
     },
     {
-      title: "Open-source",
-      description: "We share our code under MIT.",
+      title: "Software",
+      description: "We share our code openly.",
       cardImage: "img/software.svg",
       url: "docs/Products/Vault",
     },
