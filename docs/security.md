@@ -28,16 +28,16 @@ Deployment Chain(s)
 
 ## Summary of Findings
 
-| Identifier | Title                                                                                                                | Severity | Fixed |
-| ---------- | -------------------------------------------------------------------------------------------------------------------- | -------- | ----- |
-| [H-01]     | Access control modifiers on \_claim_fees will permanently lock proposer                                              | High     | X     |
-| [H-02]     | Math error in Dynamo4626#\_claimable_fees_available will lead to fees or strategy lockup                             | High     | X     |
-| [H-03]     | Malicious user can disable compound integration via share manipulation                                               | High     | X     |
-| [H-04]     | Dangerous approval/rejection criteria when number of guards is odd                                                   | High     | X     |
-| [H-05]     | A single malfunctioning/malicious adapter can permanently DOS entire vault                                           | High     | X     |
-| [M-01]     | Governance#replaceGovernance is unable to actually change vault governance                                           | Med      | X     |
-| [M-02]     | Assert statement in Dynamo4626#\_claimable_fees_available can cause vault softlock in the event of partial fund loss | Med      | X     |
-| [L-01]     | aaveAdapter.vy has no method to claim LP incentives                                                                  | Low      |       |
+| Identifier                                                                                                                       | Title                                                                                                                | Severity | Fixed |
+| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------- | ----- |
+| [H-01](#h-01-access-control-modifiers-on-_claim_fees-will-permanently-lock-proposer)                                             | Access control modifiers on \_claim_fees will permanently lock proposer                                              | High     | X     |
+| [H-02](#h-02-math-error-in-dynamo4626_claimable_fees_available-will-lead-to-fees-or-strategy-lockup)                             | Math error in Dynamo4626#\_claimable_fees_available will lead to fees or strategy lockup                             | High     | X     |
+| [H-03](#h-03-malicious-user-can-disable-compound-integration-via-share-manipulation)                                             | Malicious user can disable compound integration via share manipulation                                               | High     | X     |
+| [H-04](#h-04-dangerous-approvalrejection-criteria-when-number-of-guards-is-odd)                                                  | Dangerous approval/rejection criteria when number of guards is odd                                                   | High     | X     |
+| [H-05](#h-05-a-single-malfunctioningmalicious-adapter-can-permanently-dos-entire-vault)                                          | A single malfunctioning/malicious adapter can permanently DOS entire vault                                           | High     | X     |
+| [M-01](#m-01-governancereplacegovernance-is-unable-to-actually-change-vault-governance)                                          | Governance#replaceGovernance is unable to actually change vault governance                                           | Med      | X     |
+| [M-02](#m-02-assert-statement-in-dynamo4626_claimable_fees_available-can-cause-vault-softlock-in-the-event-of-partial-fund-loss) | Assert statement in Dynamo4626#\_claimable_fees_available can cause vault softlock in the event of partial fund loss | Med      | X     |
+| [L-01](#l-01-aaveadaptervy-has-no-method-to-claim-lp-incentives)                                                                 | aaveAdapter.vy has no method to claim LP incentives                                                                  | Low      |       |
 
 ### [H-01] Access control modifiers on \_claim_fees will permanently lock proposer
 
