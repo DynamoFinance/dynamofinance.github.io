@@ -3,9 +3,7 @@ sidebar_position: 3
 title: Security
 ---
 
-### Vault
-
-# Dynamo Audit Report
+# Dynamo Audit Report: ERC-4626 vault
 
 ### Reviewed by: 0x52 (@IAm0x52)
 
