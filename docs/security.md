@@ -5,7 +5,7 @@ title: Security
 
 # Dynamo Audit Report: ERC-4626 vault
 
-### Reviewed by: 0x52 (@IAm0x52)
+### Reviewed by: 0x52 ([@IAm0x52](https://twitter.com/IAm0x52))
 
 ### Review Dates: 7/10/23 - 7/14/23
 
