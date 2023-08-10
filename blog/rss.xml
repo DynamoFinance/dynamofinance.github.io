@@ -4,10 +4,23 @@
         <title>Dynamo Blog</title>
         <link>https://dynamofinance.github.io/blog</link>
         <description>Dynamo Blog</description>
-        <lastBuildDate>Tue, 23 May 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 10 Aug 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Vault audited]]></title>
+            <link>https://dynamofinance.github.io/blog/vault-audited</link>
+            <guid>https://dynamofinance.github.io/blog/vault-audited</guid>
+            <pubDate>Thu, 10 Aug 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[The last month has been exciting in terms of the progress we have been able to make a lot of progress.]]></description>
+            <content:encoded><![CDATA[<p>The last month has been exciting in terms of the progress we have been able to make a lot of progress.
+Our ERC-4626 vault was examined by <a href="https://twitter.com/IAm0x52" target="_blank" rel="noopener noreferrer">0x52</a> in a four-day smart-contract security audit.
+Our smart-contract team (led by Ben and Sajal) were able to fix all highly and medium classified issues - no critical issue was found.</p><p>The <a href="https://dynamofinance.github.io/docs/security" target="_blank" rel="noopener noreferrer">full audit report</a> is available in our docs and we are currently preparing our testnet deployments.</p>]]></content:encoded>
+            <category>vault</category>
+            <category>erc-4626</category>
+            <category>audit</category>
+        </item>
         <item>
             <title><![CDATA[Vault development finished]]></title>
             <link>https://dynamofinance.github.io/blog/vault-finished</link>

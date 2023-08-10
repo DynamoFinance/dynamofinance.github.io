@@ -2,11 +2,36 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dynamofinance.github.io/blog</id>
     <title>Dynamo Blog</title>
-    <updated>2023-05-23T00:00:00.000Z</updated>
+    <updated>2023-08-10T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dynamofinance.github.io/blog"/>
     <subtitle>Dynamo Blog</subtitle>
     <icon>https://dynamofinance.github.io/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Vault audited]]></title>
+        <id>https://dynamofinance.github.io/blog/vault-audited</id>
+        <link href="https://dynamofinance.github.io/blog/vault-audited"/>
+        <updated>2023-08-10T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[The last month has been exciting in terms of the progress we have been able to make a lot of progress.]]></summary>
+        <content type="html"><![CDATA[<p>The last month has been exciting in terms of the progress we have been able to make a lot of progress.
+Our ERC-4626 vault was examined by <a href="https://twitter.com/IAm0x52" target="_blank" rel="noopener noreferrer">0x52</a> in a four-day smart-contract security audit.
+Our smart-contract team (led by Ben and Sajal) were able to fix all highly and medium classified issues - no critical issue was found.</p><p>The <a href="https://dynamofinance.github.io/docs/security" target="_blank" rel="noopener noreferrer">full audit report</a> is available in our docs and we are currently preparing our testnet deployments.</p>]]></content>
+        <author>
+            <name>Ben Scherry</name>
+            <uri>https://github.com/scherrey</uri>
+        </author>
+        <author>
+            <name>Sajal Kayan</name>
+            <uri>https://github.com/sajal</uri>
+        </author>
+        <author>
+            <name>Eike Caldeweyher</name>
+            <uri>https://github.com/f3rmion</uri>
+        </author>
+        <category label="vault" term="vault"/>
+        <category label="erc-4626" term="erc-4626"/>
+        <category label="audit" term="audit"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Vault development finished]]></title>
         <id>https://dynamofinance.github.io/blog/vault-finished</id>
@@ -18,7 +43,7 @@ After an internal code review from Balancer we received also the first tranche o
 are now moving forward to the first smart-contract audit.
 The first audit will most probably be happening in early June, and we plan to get a second competitive audit on top.</p><p>Keep tuned!</p><p>Cheers,</p><p>ehjc</p>]]></content>
         <author>
-            <name>ehjc</name>
+            <name>Eike Caldeweyher</name>
             <uri>https://github.com/f3rmion</uri>
         </author>
         <category label="vault" term="vault"/>
@@ -41,7 +66,7 @@ In order to participate as a Strategist, a new set of weights has to be proposed
 This new set of weights has to increase the APY of the asset-specific vault.
 If it does, the Strategy goes live and the Strategist earns part of the revenue that is collected while the Strategy is active.</p><p>The governance part of the ERC-4626 vault will be released soon as well.</p><h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="update-2023-01-13">Update 2023-01-13<a href="#update-2023-01-13" class="hash-link" aria-label="Direct link to Update 2023-01-13" title="Direct link to Update 2023-01-13">​</a></h3><p>Since the Balancer infrastructure does not allow an easy solution for custom asset manager yet (maybe in Balancer V3?), we decided to interface with the ERC-4626 vaults directly.</p><p><img loading="lazy" alt="Vault-2" src="/assets/images/2023-01-13_vault-2cbf7e314d84e99184fe25c40f79aa86.png" width="1007" height="771" class="img_ev3q"></p>]]></content>
         <author>
-            <name>ehjc</name>
+            <name>Eike Caldeweyher</name>
             <uri>https://github.com/f3rmion</uri>
         </author>
         <author>
@@ -71,7 +96,7 @@ If it does, the Strategy goes live and the Strategist earns part of the revenue 
             <uri>https://github.com/justingreenberg</uri>
         </author>
         <author>
-            <name>ehjc</name>
+            <name>Eike Caldeweyher</name>
             <uri>https://github.com/f3rmion</uri>
         </author>
         <category label="balancer" term="balancer"/>
