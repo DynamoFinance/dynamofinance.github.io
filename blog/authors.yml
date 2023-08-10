@@ -1,5 +1,5 @@
 ehjc:
-  name: ehjc
+  name: Eike Caldeweyher
   title: Head of R&D
   url: https://github.com/f3rmion
   image_url: https://pbs.twimg.com/profile_images/1686636029338357760/wl4xd6XJ_400x400.jpg
@@ -27,3 +27,9 @@ ben:
   title: Lead Smart-Contract Engineer
   url: https://github.com/scherrey
   image_url: https://github.com/scherrey.png
+
+sajal:
+  name: Sajal Kayan
+  title: Smart-Contract Engineer
+  url: https://github.com/sajal
+  image_url: https://biggestlab.io/img/sajal.webp
