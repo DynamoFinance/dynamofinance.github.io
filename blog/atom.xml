@@ -12,10 +12,10 @@
         <id>https://dynamofinance.github.io/blog/vault-audited</id>
         <link href="https://dynamofinance.github.io/blog/vault-audited"/>
         <updated>2023-08-10T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[The last month has been exciting in terms of the progress we have been able to make a lot of progress.]]></summary>
-        <content type="html"><![CDATA[<p>The last month has been exciting in terms of the progress we have been able to make a lot of progress.
+        <summary type="html"><![CDATA[The last month has been exciting in terms of progress that we have been able to make.]]></summary>
+        <content type="html"><![CDATA[<p>The last month has been exciting in terms of progress that we have been able to make.
 Our ERC-4626 vault was examined by <a href="https://twitter.com/IAm0x52" target="_blank" rel="noopener noreferrer">0x52</a> in a four-day smart-contract security audit.
-Our smart-contract team (led by Ben and Sajal) were able to fix all highly and medium classified issues - no critical issue was found.</p><p>The <a href="https://dynamofinance.github.io/docs/security" target="_blank" rel="noopener noreferrer">full audit report</a> is available in our docs and we are currently preparing our testnet deployments.</p>]]></content>
+Our smart-contract team (led by Ben and Sajal) were able to fix all highly and medium classified issues - no critical issue was found that would drain the assets in the vault.</p><p>The <a href="https://dynamofinance.github.io/docs/security" target="_blank" rel="noopener noreferrer">full audit report</a> is available in our docs and we are currently preparing our testnet deployments.</p>]]></content>
         <author>
             <name>Ben Scherry</name>
             <uri>https://github.com/scherrey</uri>
