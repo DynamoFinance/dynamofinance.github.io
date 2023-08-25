@@ -38,6 +38,7 @@ Deployment Chain(s)
 | [M-01](#m-01-governancereplacegovernance-is-unable-to-actually-change-vault-governance)                                          | Governance#replaceGovernance is unable to actually change vault governance                                           | Med      | X     |
 | [M-02](#m-02-assert-statement-in-dynamo4626_claimable_fees_available-can-cause-vault-softlock-in-the-event-of-partial-fund-loss) | Assert statement in Dynamo4626#\_claimable_fees_available can cause vault softlock in the event of partial fund loss | Med      | X     |
 | [L-01](#l-01-aaveadaptervy-has-no-method-to-claim-lp-incentives)                                                                 | aaveAdapter.vy has no method to claim LP incentives                                                                  | Low      |       |
+| [L-02](#l-02-ownership-of-governancevy-cant-be-changed-after-initialization)                                                     | Ownership of governance.vy can't be changed after initialization                                                     | Low      | X     |
 
 ### [H-01] Access control modifiers on \_claim_fees will permanently lock proposer
 
@@ -53,7 +54,7 @@ Dynamo4626#\_set_strategy attempts to distribute fees to proposer when proposer 
 
 #### Lines of Code
 
-https://github.com/DynamoFinance/vault/blob/c331ffefadec7406829fc9f2e7f4ee7631bef6b3/contracts/Dynamo4626.vy#L496-L533
+[Dynamo4626.vy#L496-L533](https://github.com/DynamoFinance/vault/blob/c331ffefadec7406829fc9f2e7f4ee7631bef6b3/contracts/Dynamo4626.vy#L496-L533)
 
 #### Recommendation
 
@@ -149,7 +150,7 @@ Fixed [here](https://github.com/DynamoFinance/vault/commit/835993b6e9357b2246139
 
 #### Details
 
-https://github.com/DynamoFinance/vault/blob/c331ffefadec7406829fc9f2e7f4ee7631bef6b3/contracts/FundsAllocator.vy#L47-L57
+[FundsAllocator.vy#L47-L57](https://github.com/DynamoFinance/vault/blob/c331ffefadec7406829fc9f2e7f4ee7631bef6b3/contracts/FundsAllocator.vy#L47-L57)
 
     for pos in range(MAX_POOLS):
         pool : BalancePool = _pool_balances[pos]
@@ -236,7 +237,7 @@ On alt L1's and L2's AAVE V3 frequently has LP incentives (such as OP tokens on 
 
 #### Lines of Code
 
-https://github.com/DynamoFinance/vault/blob/master/contracts/aaveAdapter.vy
+[aaveAdapter.vy](https://github.com/DynamoFinance/vault/blob/master/contracts/aaveAdapter.vy)
 
 #### Recommendation
 
@@ -245,3 +246,19 @@ Before deploying anything other than mainnet make sure to include a way to claim
 #### Remediation
 
 Acknowledged that this is a limitation of their current implementation
+
+### [L-02] Ownership of governance.vy can't be changed after initialization
+
+### Details
+
+**Additional change requested after the audit period**
+
+Ownership of governance.vy is set in the constructor but there is no function for change the ownership after it has been set. This hinders future migrations and adds extra complexity to the deployment process.
+
+#### Lines of Code
+
+[Governance.vy#L126](https://github.com/DynamoFinance/vault/blob/master/contracts/Governance.vy#L126)
+
+#### Remediation
+
+Fixed [here](https://github.com/DynamoFinance/vault/commit/acd2325b9f2a5c9fbed1b52aa5c774eff0f64897) by adding the replaceOwner function.
