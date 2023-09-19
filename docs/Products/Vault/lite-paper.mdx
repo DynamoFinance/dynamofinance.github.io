@@ -15,7 +15,7 @@ However, decentralized stablecoins need to attract liquidity at scale in order t
 become viable and in order for them to achieve this the DeFi space needs to develop
 the right mechanisms for attracting and maintaining liquidity.
 The presented protocol develops a yield-optimized liquidity foundation on
-top of Balancer's boosted pool designs in order to offer optimized yields to liquidity
+top of decentralised exchanges in order to offer optimized yields to liquidity
 providers from the integration of swap activity and optimized lending market capital
 allocation that can be offered by the use of our ERC-4626 vaults.
 Each component of our base liquidity pools is connected to its respective vault generating
@@ -53,8 +53,8 @@ DeFi space allowing anyone to build on top of it.
 
 Dynamo vaults can facilitate a wide array of use cases with the optimisation of liquidity
 provision in stable swap pools being just one example of its capabilities.
-The upcoming integration of our vaults with the Balancer V2 boosted pool framework will act
-as a proof of concept by allowing liquidity providers to take advantage of our boosted pools
+The upcoming integration of our vaults with decentralised exchanges will act
+as a proof of concept by allowing liquidity providers to take advantage of our base pools
 in order to optimise their liquidity.
 This can accelerate the development of liquidity for decentralised stablecoins and other
 assets by allowing liquidity providers to generate an optimised lending yield out of their
@@ -167,51 +167,6 @@ $$
 B_{i, k+1} = B_{i,k} - \frac{F(B_{i,k},\dots,K)}{F_{B_i}'(B_{i,k},\dots,K)}
 $$
 
-### Balancer boosted pool architecture
-
-Balancer boosted (BB) pools offer the best of both worlds for liquidity providers and swappers.
-Swappers get access to deep stablecoin liquidity with near-parity exchange rates, while liquidity
-providers can send their liquidity positions to external lending market protocols like Aave.
-These versions of stable pools do not directly hold the stablecoins themselves, but rather hold
-the pool tokens of nested linear pools, which, for the Aave example, maintain proper balances of
-_TOKEN_ and _aTOKEN_ facilitating trades between them.
-Boosted pools are designed to deliver high capital efficiency by enabling users to provide trade
-liquidity for common tokens while forwarding idle tokens to external protocols.
-This gives liquidity providers the benefits of a yield generator on top of the swap fees they
-collect from trades within the base pool.
-Furthermore, nesting pool tokens creates a powerful avenue for swaps between any stablecoin
-and any wrapped token in the boosted pool.
-
-One of the key features that makes trades through boosted pools so simple is the use of
-phantom pool tokens (PPT).
-Normally when a liquidity provider joins/exits a pool, the pool mints/burns pool tokens as needed.
-This is gas intensive and requires users to execute a _join_ or _exit_.
-In pools that use PPT, however, all pool tokens are minted at the time of pool creation and are
-held by the pool itself.
-Liquidity providers use a _swap_ (or more likely Balancer's _batchSwap_) to trade to or from
-a pool token to _join_ or _exit_, respectively.
-
-The BB Aave USD Pool (bb-a-USD) demonstrates how nesting linear pools with PPT inside a stable
-pool with PPT can consolidate stablecoin liquidity while improving the liquidity provider experience.
-First, three linear pools are created for _DAI_, _USDC_, and _USDT_ each having PPT
-(bb-a-$\star$, $\star$ = _DAI_, _USDC_, and _USDT_) and maintain target balances for base tokens
-and their wrapped counterparts.
-By integrating multiple linear pools into a boosted pool, we are effectively putting the pools
-inside another pool (termed as base pool).
-Swapping tokens within the base pool is possible through the use of _batchSwap_ calls
-that go from one stablecoin to another as exemplified in the figure below.
-
-![USDC-DAI](../../../static/img/vault_wp_usdc_dai.png)
-
-#### Linear pools
-
-Linear Pools are the base component of BB pools.
-They use linear math to facilitate trades between two tokens at a known exchange rate.
-They also use a positive or negative fee mechanism to incentivize arbitrageurs to maintain
-a desired ratio between the two tokens.
-For example, the bb-a-DAI balances _DAI_ with _aDAI_, facilitating _DAI_ trades while
-maintaining a large _aDAI_ balance for an extra boost to liquidity providers.
-
 ### Dynamo Finance vaults
 
 DeFi users want to productively invest their assets in various lending platforms such
@@ -235,7 +190,7 @@ highest returns at the time.
 
 In this paper, we describe the design of Dynamo Finance vaults, which tackle the problem
 of low organic stable swap yields by developing a modular liquidity management stack comprised
-of a yield aggregator and a liquidity network bootstrapped on top of Balancer V2.
+of a yield aggregator and a liquidity network bootstrapped on top of decentralised exchanges.
 By integrating these two components, we develop an optimized stable swap offering that can
 provide sustainable yields at scale to attract and retain large amounts of stablecoin liquidity.
 
@@ -244,7 +199,7 @@ the highest possible yield out of each supported asset by reacting in real-time 
 rate fluctuations.
 We achieve this by rebalancing our exposure between our whitelisted lending markets to capture
 the added value that can be generated through active capital management.
-Below we exemplify this setup for a boosted 3pool consisting of _DAI_/_GHO_/_FRAX_.
+Below we exemplify this setup for a base pool consisting of _DAI_/_GHO_/_FRAX_.
 
 ![How Dynamo works](../../assets/deck/7.png)
 
