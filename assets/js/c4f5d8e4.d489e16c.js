@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdynamo_docs=self.webpackChunkdynamo_docs||[]).push([[4195],{2841:(e,n,t)=>{t.r(n),t.d(n,{default:()=>s});var c=t(7294),o=t(6550);function s(){return c.createElement(o.l_,{to:"/docs/intro"})}}}]);
