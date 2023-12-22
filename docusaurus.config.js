@@ -11,7 +11,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Dynamo",
-  tagline: "Activating idle liquidity.",
+  tagline: "Efficiently redistribute liquidity",
   url: "https://dynamofinance.github.io",
   baseUrl: "/",
   onBrokenLinks: "warn",
