@@ -8,3 +8,5 @@ title: Links
 [GitHub](https://github.com/DynamoFinance)
 
 [Twitter](https://twitter.com/DynamoFinance)
+
+[Team](../team)
