@@ -1,30 +1,30 @@
 ehjc:
   name: Eike Caldeweyher
-  title: Head of R&D
+  title: Research and Engineer
   url: https://github.com/f3rmion
   image_url: https://pbs.twimg.com/profile_images/1686636029338357760/wl4xd6XJ_400x400.jpg
 
 rohmanus:
   name: Rohmanus
-  title: Head of BizDev
+  title: DeFi Researcher
   url: https://twitter.com/RohmanusC
   image_url: https://pbs.twimg.com/profile_images/1455325167228440579/38hdzAOc_400x400.jpg
 
 max:
   name: Max Entropy
-  title: Head of Communications
+  title: Communications and BizDev
   url: https://twitter.com/0xMaxEntropy
   image_url: https://pbs.twimg.com/profile_images/1138346724282503168/9g8zYema_400x400.png
 
 greenbergz:
   name: greenbergz
-  title: Lead Front-end Engineer
+  title: Engineer
   url: https://github.com/justingreenberg
   image_url: https://github.com/justingreenberg.png
 
 ben:
   name: Ben Scherry
-  title: Lead Smart-Contract Engineer
+  title: Smart-Contract Engineer
   url: https://github.com/scherrey
   image_url: https://github.com/scherrey.png
 
